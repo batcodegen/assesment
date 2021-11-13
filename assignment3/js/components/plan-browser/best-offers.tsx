@@ -7,6 +7,7 @@ import {
   HORIZONTAL_15,
   HORIZONTAL_25,
   VERTICAL_10,
+  VERTICAL_12,
   VERTICAL_15,
   VERTICAL_5,
   VERTICAL_8,
@@ -21,8 +22,8 @@ const BestOffers = () => {
         borderBottomWidth: 0.5,
         backgroundColor: colors.secondary,
         opacity: 0.3,
-        marginBottom: VERTICAL_10,
-        marginTop: VERTICAL_5,
+        marginBottom: VERTICAL_12,
+        marginTop: VERTICAL_8,
       }}
     />
   );
@@ -39,8 +40,9 @@ const BestOffers = () => {
               justifyContent: 'center',
               borderColor: colors.primary,
               borderRadius: 20,
+              paddingVertical: VERTICAL_5,
             }}>
-            <Text style={{fontSize: FONT_10, color: colors.primary}}>
+            <Text style={{fontSize: FONT_12, color: colors.primary}}>
               {'Select'}
             </Text>
           </View>
@@ -49,13 +51,13 @@ const BestOffers = () => {
           style={{
             fontSize: FONT_12,
             color: colors.tertiary_light,
-            marginTop: 8,
+            marginTop: VERTICAL_8,
           }}>{`Validity: ${item.validity}`}</Text>
         <Text
           style={{
             fontSize: FONT_12,
             marginTop: VERTICAL_8,
-            opacity: 0.7,
+            opacity: 0.5,
             lineHeight: FONT_16,
           }}>
           {item.description}

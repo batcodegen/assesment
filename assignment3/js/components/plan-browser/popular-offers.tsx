@@ -40,6 +40,7 @@ const PopularOffers = () => {
               justifyContent: 'center',
               borderColor: colors.primary,
               borderRadius: 20,
+              paddingVertical: VERTICAL_5,
             }}>
             <Text style={{fontSize: FONT_12, color: colors.primary}}>
               {'Select'}
@@ -65,7 +66,7 @@ const PopularOffers = () => {
           style={{
             fontSize: FONT_12,
             marginTop: VERTICAL_8,
-            opacity: 0.7,
+            opacity: 0.5,
             lineHeight: FONT_16,
           }}>
           {item.description}

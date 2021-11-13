@@ -41,7 +41,11 @@ const TabNavigator = () => (
           horizontal
           showsHorizontalScrollIndicator={false}
           snapToInterval={200}
-          snapToAlignment={'center'}
+          decelerationRate={'fast'}
+          pagingEnabled
+          contentInset={{top: 0, left: 0, right: 0}}
+          contentOffset={{x: props?.state?.index * 30}}
+          snapToAlignment={'start'}
           style={{
             borderBottomWidth: 0.5,
             borderBottomColor: colors.primary_light,

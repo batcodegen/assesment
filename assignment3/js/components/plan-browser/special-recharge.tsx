@@ -8,6 +8,7 @@ import {
   HORIZONTAL_25,
   VERTICAL_12,
   VERTICAL_15,
+  VERTICAL_5,
   VERTICAL_8,
 } from '../../utils/contants';
 import colors from '../../utils/globalcolors';
@@ -37,6 +38,7 @@ const SpecialRecharge = () => {
               justifyContent: 'center',
               borderColor: colors.primary,
               borderRadius: 20,
+              paddingVertical: VERTICAL_5,
             }}>
             <Text style={{fontSize: FONT_12, color: colors.primary}}>
               {'Select'}
@@ -62,7 +64,7 @@ const SpecialRecharge = () => {
           style={{
             fontSize: FONT_12,
             marginTop: VERTICAL_8,
-            opacity: 0.7,
+            opacity: 0.5,
             lineHeight: FONT_16,
           }}>
           {item.description}
