@@ -1,4 +1,4 @@
-# assesment
+# assessment
 
 **Assignment 3:**
 
