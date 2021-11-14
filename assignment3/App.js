@@ -7,13 +7,11 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StatusBar, useColorScheme} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
 import AppNavigator from './js/navigation/AppNavigator';
 import colors from './js/utils/globalcolors';
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
   const backgroundStyle = {
     backgroundColor: colors.secondary_light,
     flex: 1,
@@ -21,7 +19,10 @@ const App = () => {
 
   return (
     <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
+      <StatusBar
+        barStyle={'dark-content'}
+        backgroundColor={colors.secondary_light}
+      />
       <AppNavigator />
     </SafeAreaView>
   );
