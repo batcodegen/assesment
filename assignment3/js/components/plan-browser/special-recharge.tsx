@@ -1,5 +1,5 @@
 import React, {useCallback} from 'react';
-import {FlatList, StyleSheet, Text, View} from 'react-native';
+import {FlatList, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {
   FONT_12,
   FONT_16,
@@ -24,11 +24,11 @@ const SpecialRecharge = () => {
       <View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
           <Text style={{color: colors.tertiary}}>{item.name}</Text>
-          <View style={styles.selectContainer}>
+          <TouchableOpacity style={styles.selectContainer} activeOpacity={0.5}>
             <Text style={{fontSize: FONT_12, color: colors.primary}}>
               {'Select'}
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
         <View style={{flexDirection: 'row'}}>
           <Text
@@ -45,6 +45,7 @@ const SpecialRecharge = () => {
         data={data.data}
         keyExtractor={item => item.id}
         renderItem={renderItem}
+        showsVerticalScrollIndicator={false}
         ListEmptyComponent={renderEmptyComponent}
         contentContainerStyle={styles.flatlist}
         ItemSeparatorComponent={renderSeparator}

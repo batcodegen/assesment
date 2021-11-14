@@ -19,35 +19,35 @@
             "name": "₹599",
             "validity": "365 Days",
             "dailydata": "2.5GB/Day",
-            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 3 GB data per day, 300 National SMS/day for 58 days"
+            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 2.5 GB data per day, 300 National SMS/day for 58 days"
         },
         {
             "id": "5de8035d-0d13-44e5-9fb5-6b3736d080a0",
             "name": "₹699",
             "validity": "365 Days",
             "dailydata": "3GB/Day",
-            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 4 GB data per day, 400 National SMS/day for 68 days"
+            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 3 GB data per day, 400 National SMS/day for 68 days"
         },
         {
             "id": "5de9025d-0d13-44e5-9fb5-6b3733d080a0",
-            "name": "₹699",
+            "name": "₹799",
             "validity": "365 Days",
-            "dailydata": "3GB/Day",
-            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 4 GB data per day, 400 National SMS/day for 68 days"
+            "dailydata": "4GB/Day",
+            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 4 GB data per day, 400 National SMS/day for 78 days"
         },
         {
             "id": "5de1025d-0d13-44e5-9fc5-6b3736d080a0",
-            "name": "₹699",
+            "name": "₹899",
             "validity": "365 Days",
-            "dailydata": "3GB/Day",
-            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 4 GB data per day, 400 National SMS/day for 68 days"
+            "dailydata": "4.5GB/Day",
+            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 4.5 GB data per day, 400 National SMS/day for 88 days"
         },
         {
             "id": "5de8525d-0d13-44e5-9nb5-6b3736d080a0",
-            "name": "₹699",
+            "name": "₹999",
             "validity": "365 Days",
-            "dailydata": "3GB/Day",
-            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 4 GB data per day, 400 National SMS/day for 68 days"
+            "dailydata": "5GB/Day",
+            "description": "Enjoy TRULY unlimited Local, STD& Roaming calls on any network. 5 GB data per day, 400 National SMS/day for 98 days"
         }
     ]
 }
