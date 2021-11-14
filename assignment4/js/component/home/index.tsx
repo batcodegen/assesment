@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 import {
   AppState,
   AppStateStatus,
@@ -9,24 +9,34 @@ import {
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {useSessionStore} from '../../reducers';
+import UserInactivity from 'react-native-user-inactivity';
 
 const Home = () => {
   const sessionStatus = useSessionStore();
   const dispatch = useDispatch();
+  const [active, setActive] = useState<boolean>(false);
+
+  const INACTIVITY_CHECK_INTERVAL_MS = 60000; // change this to lower the logout time interval
 
   useEffect(() => {
     let event = AppState.addEventListener('change', handleChange);
+    // point 2: logs out user when app is closed and launched 2nd time
+    performAutoLogout();
     return () => {
       event.remove();
     };
   }, []);
 
   const handleChange = (newState: AppStateStatus) => {
-    // if (newState === "active") {
-    console.log('state0000', newState);
-    // }
+    if (newState === 'background' || newState === 'inactive') {
+      // start timer once user is in bg or inactive state
+      setActive(true);
+    }
   };
-  console.log('state0000', sessionStatus);
+
+  const performAutoLogout = useCallback(() => {
+    dispatch({type: 'UPDATE_SESSION', payload: false});
+  }, []);
 
   const onTogglePressed = () => {
     dispatch({
@@ -34,16 +44,27 @@ const Home = () => {
       payload: !sessionStatus?.isSessionActive,
     });
   };
+
   return (
-    <View style={styles.container}>
-      <Text style={styles.sessionText}>SESSION</Text>
-      {sessionStatus?.isSessionActive ? (
-        <Text style={styles.sessionActive}>{'ACTIVE'}</Text>
-      ) : (
-        <Text style={styles.sessionInactive}>{'INACTIVE'}</Text>
-      )}
-      <Button title={'TOGGLE SESSION'} onPress={onTogglePressed} />
-    </View>
+    <UserInactivity
+      isActive={active}
+      timeForInactivity={INACTIVITY_CHECK_INTERVAL_MS}
+      onAction={(isActive: boolean) => {
+        // if timer exceeds 10min then isActive = false and logout user
+        if (!isActive) {
+          performAutoLogout();
+        }
+      }}>
+      <View style={styles.container}>
+        <Text style={styles.sessionText}>SESSION STATUS</Text>
+        {sessionStatus?.isSessionActive ? (
+          <Text style={styles.sessionActive}>{'ACTIVE'}</Text>
+        ) : (
+          <Text style={styles.sessionInactive}>{'INACTIVE'}</Text>
+        )}
+        <Button title={'TOGGLE SESSION'} onPress={onTogglePressed} />
+      </View>
+    </UserInactivity>
   );
 };
 
