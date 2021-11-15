@@ -16,7 +16,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const [active, setActive] = useState<boolean>(false);
 
-  const INACTIVITY_CHECK_INTERVAL_MS = 60000; // change this to lower the logout time interval
+  const INACTIVITY_CHECK_INTERVAL_MS = 600000; // change this to lower the logout time interval
 
   useEffect(() => {
     let event = AppState.addEventListener('change', handleChange);
